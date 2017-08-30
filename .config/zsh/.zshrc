@@ -48,7 +48,7 @@ WORKON_HOME=~/.virtualenvs
 #------------------------------
 # Variables
 #------------------------------
-export BROWSER="firefox-nightly"
+export BROWSER="_/.local/bin/firefox-nightly"
 export EDITOR="nvim"
 PATH="$HOME/.local/lib/.node_modules/bin:$PATH"
 export npm_config_prefix=~/.local/lib/.node_modules
