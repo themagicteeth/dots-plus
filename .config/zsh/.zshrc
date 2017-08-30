@@ -89,13 +89,15 @@ alias la="ls -a"
 alias cd..="cd .."
 alias cd.="cd .."
 alias ..="cd .."
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
-alias .......='cd ../../../../../..'
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias .......="cd ../../../../../.."
+# gtop
+alias gtop="LANG=en_US.utf8 TERM=xterm-256color gtop"
 # dots
-alias config='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
+alias config="/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME"
 # vim
 alias vim="nvim"
 # tar
