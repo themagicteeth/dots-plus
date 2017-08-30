@@ -1,6 +1,6 @@
 /* Add a color top border */
 #navigator-toolbox {
-  border-top: solid 25px #222D32 !important;
+  /* border-top: solid 25px #222D32 !important; */
 }
 
 /* Hide top tabs */
