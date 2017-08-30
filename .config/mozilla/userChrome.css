@@ -1,11 +1,4 @@
-/* :root { */
-/*   /1* --toolbar-non-lwt-bgimage: none !important; *1/ */
-/*   /1* --backbutton-background: none !important; *1/ */
-/*   /1* --backbutton-hover-background: rgba(241,243,244, 0.2) !important; *1/ */
-/*   /1* --toolbarbutton-hover-background: rgba(241,243,244, 0.2) !important; *1/ */
-/* } */
-
-/* Color the toolbar */
+/* Add a color top border */
 #navigator-toolbox {
   border-top: solid 25px #222D32 !important;
 }
@@ -23,8 +16,8 @@
 }
 
 #sidebar-box:hover {
-    min-width: 250px !important;
-    max-width: 250px !important;
+    min-width: 200px !important;
+    max-width: 200px !important;
 } 
 
 #sidebar-title {
@@ -75,3 +68,17 @@
   display: none !important;
   list-style-image: none !important;
 }
+
+/* Adjust the hamburger menu */
+photonpanelmultiview .panel-subview-body{margin:0!important}
+#appMenu-zoom-controls, #appMenu-zoom-controls+toolbarseparator, #appMenu-edit-controls,#appMenu-edit-controls+toolbarseparator{display:none}
+#appMenu-popup .panel-arrowcontent{margin:4px 4px 0!important;padding:0!important}
+#appMenu-popup .panel-subview-body{margin:-6px 0}
+#appMenu-mainView{padding:0!important}
+photonpanelmultiview .PanelUI-subView .toolbaritem-combined-buttons>.subviewbutton:not(#appMenu-zoomReset-button):not(#appMenu-fxa-icon){padding:10px!important}
+#appMenu-quit-button{padding:10px!important;margin-top:-6px!important}
+#appMenu-fxa-container{margin-bottom:-6px;margin-inline-end:0!important}
+#appMenu-fxa-container toolbarseparator[orient='vertical'],#appMenu-zoom-controls toolbarseparator[orient='vertical']{margin-inline-start:0!important;margin-inline-end:0!important}
+#appMenu-fxa-label{padding:10px 28px!important}
+#appMenu-fxa-avatar{border-radius:50%}
+#appMenu-fxa-icon{padding:11px 11px 10px 10px!important}
