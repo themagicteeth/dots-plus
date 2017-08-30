@@ -1,0 +1,77 @@
+/* :root { */
+/*   /1* --toolbar-non-lwt-bgimage: none !important; *1/ */
+/*   /1* --backbutton-background: none !important; *1/ */
+/*   /1* --backbutton-hover-background: rgba(241,243,244, 0.2) !important; *1/ */
+/*   /1* --toolbarbutton-hover-background: rgba(241,243,244, 0.2) !important; *1/ */
+/* } */
+
+/* Color the toolbar */
+#navigator-toolbox {
+  border-top: solid 25px #222D32 !important;
+}
+
+/* Hide top tabs */
+#tabbrowser-tabs {
+    visibility: collapse !important;
+}
+
+#sidebar-box {
+    overflow-x: hidden;
+    min-width: 30px !important;
+    max-width: 30px !important;
+    transition: all 0.25s ease 1s !important;
+}
+
+#sidebar-box:hover {
+    min-width: 250px !important;
+    max-width: 250px !important;
+} 
+
+#sidebar-title {
+  font-size: 14px;
+}
+
+.sidebar-header, #sidebar-header{
+  padding: 0 !important;
+}
+
+#webext-panels-browser {
+  margin-top: -40px !important;
+}
+
+/* Hide urlbar actions from addons */
+.webextension-page-action {
+  display: none !important;
+  list-style-image: none !important;
+}
+
+/* Hide the lock and website owener */
+#identity-box {
+  display: none;
+}
+
+/* Fix address padding after removing identity box */
+.urlbar-input-box {
+  padding-left: 10px;
+}
+
+/* Remove the go arrow */
+.urlbar-go-button {
+  list-style-image: none !important;
+  width: 0 !important;
+}
+
+.urlbar-history-dropmarker,
+.autocomplete-history-dropmarker {
+  display: none !important;
+}
+
+#urlbar[focused="true"] {
+  border: none !important;
+}
+
+/* Hide the three dot action button */
+#pageActionButton {
+  display: none !important;
+  list-style-image: none !important;
+}

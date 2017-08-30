@@ -1,0 +1,198 @@
+# i3 config file (v4
+
+# modifier
+set $mod Mod4
+
+# font
+font pango:Roboto 12 
+
+# no borders
+for_window [class="^.*"] border pixel 0
+
+# colors
+# from wal
+set_from_resource $ba i3wm.color2 #f0f0f0
+set_from_resource $bi i3wm.color8 #f0f0f0
+set $bg #222D32
+set $fg #CED1D2 
+set $ac #00BCD4
+
+# class                 border  backgr. text indicator child_border
+client.focused          $ba     $ba     $fg  $bg       $ba
+client.focused_inactive $bi     $bi     $fg  $bg       $bi
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+client.background       $bg
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start rofi (a program launcher)
+bindsym $mod+d exec --no-startup-id rofi -show run
+
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+bindsym $mod+c focus child
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+set $mode_display  (l) »  (h) »   (x) 
+mode "$mode_display" {
+    bindsym l exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --primary --output HDMI-1 --off, mode "default"
+    bindsym h exec --no-startup-id xrandr --output eDP-1 --off --output HDMI-1 --mode 2560x1440R --primary, mode "default"
+    bindsym x exec --no-startup-id xrandr --output  eDP-1 --mode 1920x1080 --output HDMI-1 --mode 2560x1440R --primary --right-of eDP-1, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# Declare here the shortcut to bring the display selection menu
+bindsym $mod+x mode "$mode_display"
+
+smart_borders on
+focus_follows_mouse no
+
+# Set default gaps
+gaps outer 10
+gaps inner 10
+
+# Correct handling of floating windows
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="dialog"] floating enable
+for_window [window_role="menu"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [window_role="About"] floating enable
+
+for_window [class="^term$"] floating enable
+for_window [class="^Pidgin$"] floating enable
+for_window [class="^Pcmanfm$"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Leafpad"] floating enable
+
+exec --no-startup-id nm-applet
+exec --no-startup-id compton --config ~/.config/compton/compton.conf -b -f
+exec --no-startup-id mpd ~/.config/mpd/mpd.conf 
+exec_always --no-startup-id killall polybar; polybar main
+exec --no-startup-id "wal -i $(< ${HOME}/.cache/wal/wal) -t -b '#222D32'"
+
+bindsym $mod+b exec "~/.local/bin/firefox-nightly &"
+bindsym $mod+w exec "wal -i ~/Pictures/Wallpapers -t -b '#222D32'"
+# bindsym $mod+w exec "wal -i ~/Pictures/Wallpapers -t -f ~/colors.css"
+
+
+bindsym $mod+Shift+f exec --no-startup-id termite -e ranger --class term, mode "default"
+bindsym $mod+shift+n exec --no-startup-id termite -e nvim --class term, mode "default"
+bindsym $mod+Shift+h exec --no-startup-id termite -e htop --class term, mode "default"
+bindsym $mod+Shift+g exec --no-startup-id termite -e 2048 --class term, mode "default"
+
+
+

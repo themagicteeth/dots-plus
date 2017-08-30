@@ -1,0 +1,42 @@
+##############################################################################
+## This is the example configuration file. Copy it to $HOME/.ncmpcpp/config ##
+## or $XDG_CONFIG_HOME/ncmpcpp/config and set up your preferences.          ##
+##############################################################################
+#
+#
+#
+# Connection settings
+mpd_host = localhost
+mpd_port = 6600
+
+# Directories
+mpd_music_dir = ~/Music
+ncmpcpp_directory = ~/.config/ncmpcpp
+lyrics_directory = ~/.config/ncmpcpp/lyrics
+
+# Visualizer
+visualizer_fifo_path = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_sync_interval = "30" 
+visualizer_in_stereo = "yes"
+visualizer_type = "spectrum"
+visualizer_look = "+|"
+#visualizer_look = ●▮
+
+# Interface
+#header_visibility = yes
+#user_interface = classic
+#statusbar_visibility = yes
+#startup_screen = playlist
+#enable_window_title = yes
+
+# Settings
+#mpd_crossfade_time = 5
+external_editor = nvim
+
+# Lyrics
+lyrics_fetchers = lyricwiki, azlyrics, genius, sing365, lyricsmania, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
+follow_now_playing_lyrics = yes
+fetch_lyrics_for_current_song_in_background = yes
+#store_lyrics_in_song_dir = no
+

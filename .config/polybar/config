@@ -1,0 +1,263 @@
+ O L O R S
+;----------------------------------------------------------
+[colors]
+foreground = #CED1D2
+background = #222D32 
+
+;----------------------------------------------------------
+;   G L O B A L
+;----------------------------------------------------------
+[bar/main]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 30
+offset-x = 0
+offset-y = 0
+radius = 0
+fixed-center = false
+;dock = true
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 0
+underline-size = 1
+
+
+spacing = 0
+padding-left = 0
+padding-right = 2
+;label-padding = 2
+module-margin-left = 1
+module-margin-right = 2
+
+;----------------------------------------------------------
+;   F O N T S
+;----------------------------------------------------------
+font-0 = fixed:pixelsize=9;1
+font-1 = FontAwesome:size=10;2
+
+;----------------------------------------------------------
+;  M A I N   M O D U L E    L A Y O U T
+;----------------------------------------------------------
+modules-left = i3
+modules-center = 
+modules-right = filesystem volume backlight memory cpu battery temperature date
+
+tray-position = right
+tray-padding = 2
+
+
+;override-redirect = true
+
+; scroll-up = i3wm-wsnext
+; scroll-down = i3wm-wsprev
+
+;----------------------------------------------------------
+;  I3   M O D U L E
+;----------------------------------------------------------
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+label-focused = 
+label-focused-padding = 2
+label-focused-font = 3
+label-occupied = 
+label-occupied-padding = 2
+label-occupied-font = 3
+label-urgent = 
+label-urgent-padding = 2
+label-urgent-font = 3
+label-empty = 
+label-empty-padding = 2
+label-empty-font = 3
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+
+;----------------------------------------------------------
+;  F I L E S Y S T E M
+;----------------------------------------------------------
+[module/filesystem]
+type = internal/fs
+interval = 25
+fixed-values = true
+
+mount-0 = /
+format-mounted = <label-mounted>
+format-mounted-prefix = " "
+
+label-mounted = %percentage_used%%
+label-unmounted = %mountpoint%: not mounted
+
+;----------------------------------------------------------
+;  C P U
+;----------------------------------------------------------
+[module/cpu]
+type = internal/cpu
+interval = 1
+
+format-prefix = " "
+
+label = %percentage%%
+
+;----------------------------------------------------------
+;   M E M O R Y
+;----------------------------------------------------------
+[module/memory]
+type = internal/memory
+interval = 1
+
+format-prefix = " "
+format-margin-top = -5
+
+label = %percentage_used%%
+
+;----------------------------------------------------------
+;   D A T E  &  T I M E
+;----------------------------------------------------------
+[module/date]
+type = internal/date
+interval = 1
+
+date-alt = "  %Y/%m/%d"
+date = ""
+
+time-alt = ""
+time = "   %l:%M "
+
+label = "  %time%%date%  "
+
+;----------------------------------------------------------
+;   V O L U M E
+;----------------------------------------------------------
+[module/volume]
+type = internal/volume
+
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+mapping = true
+
+format-volume = <ramp-volume><label-volume>
+
+label-volume = %percentage%
+label-muted =  muted
+ramp-volume-0 = " "
+ramp-volume-1 = " "
+ramp-volume-2 = " "
+ramp-volume-3 = " "
+
+;----------------------------------------------------------
+;   B A T T E R Y
+;----------------------------------------------------------
+[module/battery]
+type = internal/battery
+battery = BAT
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <label-full>
+
+label-charging = "%percentage%% "
+label-discharging = "%percentage%% "
+label-full = "  %percentage%% "
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+;----------------------------------------------------------
+;   T E M P E R A T U R E
+;----------------------------------------------------------
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 65
+interval = 2
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+
+label = %temperature%
+label-warn = %temperature%
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+
+;----------------------------------------------------------
+;  P O W E R   M E N U
+;----------------------------------------------------------
+[module/powermenu]
+type = custom/menu
+
+label-open = " »  "
+label-open-font = 4
+label-close = "   "
+label-separator = " » "
+
+; lock
+menu-0-0 = 
+menu-0-0-exec =  i3fuzzylock 
+; sleep
+menu-0-1 = 
+menu-0-1-exec = systemctl suspend
+; logout
+menu-0-2 = 
+menu-0-2-exec = pkill x
+; reboot
+menu-0-3 = 
+menu-0-3-exec = systemctl reboot
+; shutdown
+menu-0-4 = "  "
+menu-0-4-exec = systemctl poweroff
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+enable-scroll = true 
+format = <ramp> <label>
+
+label = %percentage%%
+
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+; Only applies if <bar> is used
+bar-width = 10
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
+
+; vim:ft=dosini
