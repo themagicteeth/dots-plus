@@ -1,0 +1,20 @@
+Firefox;/home/pleb/.config/xlunch/icons/firefox-nightly.png;firefox-nightly
+Pidgin;/home/pleb/.config/xlunch/icons/pidgin.png;pidgin
+Terminator;/home/pleb/.config/xlunch/icons/terminator.png;terminator
+LibreOffice;/home/pleb/.config/xlunch/icons/libreoffice-main.png;loffice
+LibreOffice Draw;/home/pleb/.config/xlunch/icons/libreoffice-draw.png;loffice --draw
+LibreOffice Writer;/home/pleb/.config/xlunch/icons/libreoffice-writer.png;loffice --writer
+LibreOffice Impress;/home/pleb/.config/xlunch/icons/libreoffice-impress.png;loffice --impress
+LibreOffice Math;/home/pleb/.config/xlunch/icons/libreoffice-math.png;loffice --math
+LibreOffice Calc;/home/pleb/.config/xlunch/icons/libreoffice-calc.png;loffice --calc
+LibreOffice Base;/home/pleb/.config/xlunch/icons/libreoffice-base.png;loffice --base
+Zim;/home/pleb/.config/xlunch/icons/zim.png;zim
+IntelliJ Idea;/home/pleb/.config/xlunch/icons/intellij.png;intellij-idea-ultimate-edition
+Leafpad;/home/pleb/.config/xlunch/icons/leafpad.png;leafpad
+Gcolor2;/home/pleb/.config/xlunch/icons/gcolor2.png;gcolor2
+ePDFView;/home/pleb/.config/xlunch/icons/epdfview.png;epdfview
+Nitrogen;/home/pleb/.config/xlunch/icons/nitrogen.png;nitrogen ~/Pictures
+Inkscape;/home/pleb/.config/xlunch/icons/inkscape.png;inkscape
+PCManFM;/home/pleb/.config/xlunch/icons/pcmanfm.png;pcmanfm
+Shutdown;/home/pleb/.config/xlunch/icons/shutdown.png;shutdown -h now
+lxappearance;/home/pleb/.config/xlunch/icons/lxappearance.png;lxappearance

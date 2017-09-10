@@ -10,16 +10,12 @@ font pango:Roboto 12
 for_window [class="^.*"] border pixel 0
 
 # colors
-# from wal
-set_from_resource $ba i3wm.color2 #f0f0f0
-set_from_resource $bi i3wm.color8 #f0f0f0
 set $bg #222D32
 set $fg #CED1D2 
-set $ac #00BCD4
 
 # class                 border  backgr. text indicator child_border
-client.focused          $ba     $ba     $fg  $bg       $ba
-client.focused_inactive $bi     $bi     $fg  $bg       $bi
+client.focused          $fg     $fg     $bg  $bg       $fg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
 client.unfocused        $bg     $bg     $fg  $bg       $bg
 client.urgent           $bg     $bg     $fg  $bg       $bg
 client.placeholder      $bg     $bg     $fg  $bg       $bg
@@ -29,13 +25,14 @@ client.background       $bg
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec terminator 
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show run
+# bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id xlunch -f "Roboto-Regular/20" -I 25 -s 100 -c 6 -b 140 
 
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -160,7 +157,7 @@ focus_follows_mouse no
 
 # Set default gaps
 gaps outer 10
-gaps inner 10
+gaps inner 13
 
 # Correct handling of floating windows
 for_window [window_role="pop-up"] floating enable
@@ -179,18 +176,17 @@ for_window [class="Lxappearance"] floating enable
 for_window [class="Leafpad"] floating enable
 
 exec --no-startup-id nm-applet
-exec --no-startup-id compton --config ~/.config/compton/compton.conf -b -f
+exec --no-startup-id compton --config ~/.config/compton/compton.conf -b -c
 exec --no-startup-id mpd ~/.config/mpd/mpd.conf 
 exec_always --no-startup-id killall polybar; polybar main
 exec --no-startup-id "wal -i $(< ${HOME}/.cache/wal/wal) -t -b '#222D32'"
 
 bindsym $mod+b exec "~/.local/bin/firefox-nightly &"
 bindsym $mod+w exec "wal -i ~/Pictures/Wallpapers -t -b '#222D32'"
-# bindsym $mod+w exec "wal -i ~/Pictures/Wallpapers -t -f ~/colors.css"
 
 
 bindsym $mod+Shift+f exec --no-startup-id termite -e ranger --class term, mode "default"
-bindsym $mod+shift+n exec --no-startup-id termite -e nvim --class term, mode "default"
+bindsym $mod+Shift+n exec --no-startup-id termite -e nvim --class term, mode "default"
 bindsym $mod+Shift+h exec --no-startup-id termite -e htop --class term, mode "default"
 bindsym $mod+Shift+g exec --no-startup-id termite -e 2048 --class term, mode "default"
 
