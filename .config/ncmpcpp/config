@@ -19,9 +19,9 @@ visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_output_name = "my_fifo"
 visualizer_sync_interval = "30" 
 visualizer_in_stereo = "yes"
+visualizer_sample_multiplier = .8
 visualizer_type = "spectrum"
-visualizer_look = "+|"
-#visualizer_look = ●▮
+visualizer_look = "●▮"
 
 # Interface
 #header_visibility = yes
@@ -39,4 +39,4 @@ external_editor = nvim
 #follow_now_playing_lyrics = yes
 #fetch_lyrics_for_current_song_in_background = yes
 #store_lyrics_in_song_dir = no
-
+progressbar_look = "◾◽"
