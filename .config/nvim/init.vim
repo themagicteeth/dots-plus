@@ -12,7 +12,7 @@ endif
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'dylanaraps/wal'
+Plug 'dylanaraps/wal.vim'
 
 Plug 'tpope/vim-vinegar'
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
