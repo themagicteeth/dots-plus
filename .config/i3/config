@@ -1,5 +1,3 @@
-# i3 config file (v4
-
 # modifier
 set $mod Mod4
 
@@ -31,7 +29,6 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-# bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+d exec --no-startup-id xlunch -f "Roboto-Regular/20" -I 25 -s 100 -c 6 -b 140 
 
 # Scratchpad
@@ -179,16 +176,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id compton --config ~/.config/compton/compton.conf -b -c
 exec --no-startup-id mpd ~/.config/mpd/mpd.conf 
 exec_always --no-startup-id killall polybar; polybar main
-exec --no-startup-id "wal -i $(< ${HOME}/.cache/wal/wal) -t -b '#222D32'"
+exec --no-startup-id "wal -i $(< ${HOME}/.cache/wal/wal) -t -b '#222D32' -o terminator.sh"
 
 bindsym $mod+b exec "~/.local/bin/firefox-nightly &"
 bindsym $mod+w exec "wal -i ~/Pictures/Wallpapers -t -b '#222D32'"
-
-
-bindsym $mod+Shift+f exec --no-startup-id termite -e ranger --class term, mode "default"
-bindsym $mod+Shift+n exec --no-startup-id termite -e nvim --class term, mode "default"
-bindsym $mod+Shift+h exec --no-startup-id termite -e htop --class term, mode "default"
-bindsym $mod+Shift+g exec --no-startup-id termite -e 2048 --class term, mode "default"
-
-
-
