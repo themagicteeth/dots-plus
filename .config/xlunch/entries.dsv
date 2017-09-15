@@ -18,3 +18,18 @@ Inkscape;/home/pleb/.config/xlunch/icons/inkscape.png;inkscape
 PCManFM;/home/pleb/.config/xlunch/icons/pcmanfm.png;pcmanfm
 Shutdown;/home/pleb/.config/xlunch/icons/shutdown.png;shutdown -h now
 lxappearance;/home/pleb/.config/xlunch/icons/lxappearance.png;lxappearance
+Neovim;/home/pleb/.config/xlunch/icons/nvim.png;terminator -e nvim
+Ranger;/home/pleb/.config/xlunch/icons/ranger.png;terminator -e ranger
+Htop;/home/pleb/.config/xlunch/icons/htop.png;terminator -e htop
+Update;/home/pleb/.config/xlunch/icons/arch.png;terminator -e "sudo pacman -Syyu"
+Ncmpcpp;/home/pleb/.config/xlunch/icons/ncmpcpp.png;terminator -e ncmpcpp
+2048;/home/pleb/.config/xlunch/icons/2048.png;terminator -e 2048
+Gtop;/home/pleb/.config/xlunch/icons/gtop.png;terminator -e gtop
+Gimp;/home/pleb/.config/xlunch/icons/gimp.png;gimp
+i3 Settings;/home/pleb/.config/xlunch/icons/i3.png;terminator -e "nvim ~/.config/i3/config"
+iPython;/home/pleb/.config/xlunch/icons/ipython.png;terminator -e ipython
+Datagrip;/home/pleb/.config/xlunch/icons/datagrip.png;datagrip
+Weechat;/home/pleb/.config/xlunch/icons/weechat.png;terminator -e weechat
+Tor Browser;/home/pleb/.config/xlunch/icons/tor.png;/home/pleb/.local/opt/tor-browser_en-US/start-tor-browser.desktop
+Termite;/home/pleb/.config/xlunch/icons/termite.png;termite
+Connection Editor;/home/pleb/.config/xlunch/icons/nm-applet.png;nm-connection-editor

@@ -83,6 +83,8 @@ pref("dom.w3c_touch_events.enabled", 0);
 pref("media.video_stats.enabled", false);
 pref("dom.netinfo.enabled", false);
 pref("media.navigator.enabled", false);
+pref("security.ssl.disable_session_identifiers", true);
+
 
 // Presentation API
 lockPref("dom.presentation.enabled", false);
@@ -92,7 +94,16 @@ lockPref("dom.presentation.discovery.enabled", false);
 lockPref("dom.presentation.receiver.enabled", false);
 lockPref("dom.presentation.session_transport.data_channel.enable", false);
 
+// Mixed display content
+pref("security.mixed_content.block_display_content", true);
 
+// Isolate cookies
+pref("privacy.firstparty.isolate", true);
+pref("privacy.firstparty.isolate.restrict_opener_access", true);
 
+// Plugins
+lockPref("extensions.systemAddon.update.url", "");
 
-
+// Cookies
+lockPref("network.cookie.leave-secure-alone", true);
+lockPref("network.cookie.thirdparty.sessionOnly", true);
