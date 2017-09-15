@@ -10,6 +10,7 @@ fi
 # Even better ls, grc, wal, ccat (color stuff)
 #------------------------------
 (wal -r &)
+setsid wal -r
 
 [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 
@@ -88,19 +89,18 @@ alias la="ls -a"
 # cd
 alias cd..="cd .."
 alias cd.="cd .."
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ......="cd ../../../../.."
-alias .......="cd ../../../../../.."
 # gtop
 alias gtop="LANG=en_US.utf8 TERM=xterm-256color gtop"
 # dots
 alias config="/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME"
+alias configa="config add"
+alias configc="config commit -m 'changed stuff'"
 # vim
 alias vim="nvim"
 # tar
 alias tarx="tar -xvf"
-
+# youtube-dl
+alias mp3='youtube-dl --extract-audio --audio-format mp3 --no-playlist -o "~/Music/%(title)s-%(id)s.%(ext)s"'
+# weather
+alias wttr="curl -s wttr.in/Minneapolis"
 
