@@ -33,3 +33,4 @@ Weechat;/home/pleb/.config/xlunch/icons/weechat.png;terminator -e weechat
 Tor Browser;/home/pleb/.config/xlunch/icons/tor.png;/home/pleb/.local/opt/tor-browser_en-US/start-tor-browser.desktop
 Termite;/home/pleb/.config/xlunch/icons/termite.png;termite
 Connection Editor;/home/pleb/.config/xlunch/icons/nm-applet.png;nm-connection-editor
+Gydl;/home/pleb/.config/xlunch/icons/youtubedl.png;gydl.py
