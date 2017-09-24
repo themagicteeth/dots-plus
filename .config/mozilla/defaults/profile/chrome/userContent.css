@@ -1,0 +1,6 @@
+/* Add favorites and collection buttons back to Firefox Add-ons */
+@-moz-document domain("addons.mozilla.org") {
+    .addon-details .widgets {
+        display: initial !important;
+    }
+}

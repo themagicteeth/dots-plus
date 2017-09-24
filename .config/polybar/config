@@ -42,7 +42,7 @@ font-1 = FontAwesome:size=10;2
 ;----------------------------------------------------------
 modules-left = i3
 modules-center = 
-modules-right = filesystem volume backlight memory cpu battery temperature date
+modules-right = filesystem volume  memory cpu battery temperature date
 
 tray-position = right
 tray-padding = 2
@@ -63,20 +63,28 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-pin-workspaces = true
+pin-workspaces = false 
 
-label-focused = 
-label-focused-padding = 2
+; ws-icon-1 = 1;
+; ws-icon-2 = 2;
+; ws-icon-3 = 3;
+
+
+; label-focused = 
+label-focused-underline = #555555
+label-focused-background = #555555
 label-focused-font = 3
-label-occupied = 
-label-occupied-padding = 2
-label-occupied-font = 3
-label-urgent = 
-label-urgent-padding = 2
-label-urgent-font = 3
-label-empty = 
-label-empty-padding = 2
-label-empty-font = 3
+label-focused-padding = 3
+; label-occupied = 
+label-occupied-padding = 3
+; label-occupied-font = 3
+; label-urgent = 
+label-urgent-padding = 3
+; label-urgent-font = 3
+; label-empty = 
+label-empty-padding = 3
+; label-empty-font = 3
+label-unfocused-padding = 3
 
 [module/xwindow]
 type = internal/xwindow
@@ -206,33 +214,6 @@ ramp-2 = 
 ramp-3 = 
 ramp-4 = 
 
-;----------------------------------------------------------
-;  P O W E R   M E N U
-;----------------------------------------------------------
-[module/powermenu]
-type = custom/menu
-
-label-open = " »  "
-label-open-font = 4
-label-close = "   "
-label-separator = " » "
-
-; lock
-menu-0-0 = 
-menu-0-0-exec =  i3fuzzylock 
-; sleep
-menu-0-1 = 
-menu-0-1-exec = systemctl suspend
-; logout
-menu-0-2 = 
-menu-0-2-exec = pkill x
-; reboot
-menu-0-3 = 
-menu-0-3-exec = systemctl reboot
-; shutdown
-menu-0-4 = "  "
-menu-0-4-exec = systemctl poweroff
-
 [settings]
 screenchange-reload = true
 
@@ -240,7 +221,9 @@ screenchange-reload = true
 margin-top = 5
 margin-bottom = 5
 
-
+;----------------------------------------------------------
+;  B A C K L I G H T 
+;----------------------------------------------------------
 [module/backlight]
 type = internal/backlight
 card = intel_backlight
