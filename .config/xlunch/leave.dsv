@@ -1,0 +1,6 @@
+Lock;/home/pleb/.config/xlunch/icons/lock.png;i3lock
+Logout;/home/pleb/.config/xlunch/icons/logout.png;i3-msg exit
+Suspend;/home/pleb/.config/xlunch/icons/suspend.png;systemctl suspend
+Hibernate;/home/pleb/.config/xlunch/icons/hibernate.png;systemctl hibernate
+Reboot;/home/pleb/.config/xlunch/icons/reboot.png;systemctl reboot
+Shutdown;/home/pleb/.config/xlunch/icons/shutdown.png;shutdown -h now
